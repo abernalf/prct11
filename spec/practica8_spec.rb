@@ -25,4 +25,6 @@ describe Lista do
      expect(lista.cabeza).to eq(nodo1)
     end
     
+
+    
 end
