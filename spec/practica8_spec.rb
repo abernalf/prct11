@@ -83,6 +83,45 @@ describe Clase_Madre do
                 end
                 
             end
+            
+            
+    context "Revistas" do
+                revista1 = Clase_Madre::Revista.new("Richard E. Silverman","Redes neuronales",2015,25,"Agapea","2ª","ISSN-10: 122449325866", "Nature")
+                
+                it "La revista pertenece a la clase Revista" do
+                   expect(revista1.instance_of?Clase_Madre::Revista).to eq(true)
+                   
+                end
+                
+                
+                 it "# La revista no pertenece a la clase Libro " do
+                   expect(revista1.instance_of?Clase_Madre::Libro).to eq(false)
+                   
+                   
+                end
+                
+    end
+    
+    
+    libro1 = Clase_Madre::Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    revista1 = Clase_Madre::Revista.new("Richard E. Silverman","Redes neuronales",2015,25,"Agapea","2ª","ISSN-10: 122449325866", "Nature")
+    
+    
+    nodoLC1=Node.new(libro1,nil,nil)
+    nodoLC2=Node.new(revista1,nil,nil)
+    listaLC=Lista.new(nodoLC1)
+    
+    it "Libro y Revista en misma lista" do
+        listaLC.i_f(nodoLC2)
+        expect(listaLC.final).to eq(nodoLC2)
+        
+    end
+            
+            
+    
+    
+end
+
     
             
             
