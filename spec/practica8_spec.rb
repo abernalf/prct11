@@ -21,9 +21,10 @@ describe Lista do
     nodo2 = Node.new(3,nil,nil)
     lista = Lista.new(nodo)
     
-     it "El nodo ha sido añadido" do
+     it "El nodo ha sido añadido por el principio" do
      lista.i_p(nodo1)
      lista.i_p(nodo2)
+     
      
      expect(lista.cabeza).to eq(nodo2)
     end
