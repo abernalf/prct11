@@ -19,6 +19,7 @@ describe Lista do
     nodo = Node.new(1,nil,nil)
     nodo1 = Node.new(2,nil,nil)
     nodo2 = Node.new(3,nil,nil)
+    nodo3 = Node.new(4,nil,nil)
     lista = Lista.new(nodo)
     
      it "El nodo ha sido añadido por el principio" do
@@ -36,8 +37,9 @@ describe Lista do
     end
     
     it "El nodo ha sido insertado por el final" do
-       lista.i_f
-       expect(lista.final).to eq(nodo1_)
+       lista.i_f(nodo2)
+       lista.i_f(nodo3)
+       expect(lista.final).to eq(nodo3)
     end
     
     

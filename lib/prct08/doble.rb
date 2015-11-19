@@ -22,5 +22,11 @@ class Lista
        @cabeza = aux.next
     end
     
+    def i_f(nodo)
+       aux = @final
+       aux.next=nodo
+        @final=nodo
+    end
+    
 
 end
