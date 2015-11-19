@@ -64,6 +64,85 @@ class Clase_Madre
 end
 
 
+class Libro < Clase_Madre
+
+    
+    
+    def initialize(autor,titulo,fecha,serie,editorial,edicion,isbn)
+       @autor=autor
+       @titulo=titulo
+       @fecha=fecha
+       @serie = serie
+       @editorial = editorial
+       @edicion = edicion
+       @isbn = isbn
+    end
+    
+    def getautor()
+        return @autor
+    end
+    
+    def gettitulo()
+        return @titulo
+    end
+    
+    def getserie()
+        return @serie
+    end
+    
+    def geteditorial()
+        return @editorial
+    end
+    
+    def getnumedicion()
+        return @edicion
+    end
+    
+    def getfecha()
+        return @fecha
+    end
+    def getisbn
+        return @isbn
+    end
+
+end
+
+
+class Revista < Clase_Madre
+
+   def initialize(autor,titulo,fecha,serie,editorial,edicion,issn,numed)
+       @autor=autor
+       @titulo=titulo
+       @fecha=fecha
+       @serie = serie 
+       @editorial = editorial
+       @edicion = edicion 
+       @issn = issn 
+       @numed = numed 
+   end
+    
+
+    
+
+    
+    def getserie()
+        return @serie
+    end
+    
+    def geteditorial()
+        return @editorial
+    end
+    
+    def getnumedicion()
+        return @edicion
+    end
+    
+    def getissn
+        return @issn
+    end
+
+    
+end
 
 
 
