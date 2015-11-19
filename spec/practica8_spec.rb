@@ -42,9 +42,11 @@ describe Lista do
        expect(lista.final).to eq(nodo3)
     end
     
-    it "Añadido el metodo extraer por el final" do
+    it "extraer por el final" do
        lista.e_f
-       expect(lista.final).to eq(nodo2)
+       lista.e_f
+       expect(lista.final).to eq(nodo)
+
        
         
     end

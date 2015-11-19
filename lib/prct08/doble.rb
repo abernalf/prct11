@@ -23,9 +23,16 @@ class Lista
     end
     
     def i_f(nodo)
-       aux = @final
-       aux.next=nodo
-        @final=nodo
+        aux = @final
+        @final = nodo
+        aux.next = nodo
+        @final.prev = aux
+    end
+    
+    def e_f
+        
+       @final = @final.prev
+       
     end
     
 
