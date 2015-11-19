@@ -38,3 +38,33 @@ class Lista
 
 end
 
+
+class Clase_Madre
+    
+    def initialize(autor,titulo,fecha)
+       @autor = autor
+       @titulo = titulo
+       @fecha= fecha
+    end
+    
+    def autor
+        return @autor
+    end
+    
+    def titulo
+        return @titulo
+    end
+    
+    def fecha
+        return @fecha
+    end
+    
+    
+    
+end
+
+
+
+
+
+
