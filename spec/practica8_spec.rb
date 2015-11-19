@@ -58,7 +58,31 @@ end
 
 describe Clase_Madre do
 
-
+    context "Libros" do
+                libro1 = Clase_Madre::Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+                libro2 = Clase_Madre::Libro.new(["Tupu", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+                it "El libro pertenece a la Clase_Madre" do
+                   expect(libro1.instance_of?Clase_Madre::Libro).to eq(true)
+                   
+                end
+                
+                
+                
+                it "El libro no  pertenece a la clase Revista" do
+                   expect(libro1.instance_of?Clase_Madre::Revista).to eq(false)
+                   
+                end
+                
+                nodoL = Node.new(libro1,nil,nil)
+                nodoL1= Node.new(libro2,nil,nil)
+                listaL = Lista.new(nodoL)
+                
+                it "Se añaden los dos libros" do
+                    listaL.i_p(nodoL1)
+                 expect(listaL.cabeza).to eq(nodoL1)
+                end
+                
+            end
     
             
             
