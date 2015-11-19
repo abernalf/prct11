@@ -17,5 +17,10 @@ class Lista
         
     end
     
+    def e_p
+       aux = @cabeza
+       @cabeza = aux.next
+    end
+    
 
 end
