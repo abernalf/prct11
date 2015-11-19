@@ -35,6 +35,11 @@ describe Lista do
        expect(lista.cabeza).to eq(nodo1)
     end
     
+    it "El nodo ha sido insertado por el final" do
+       lista.i_f
+       expect(lista.final).to eq(nodo1_)
+    end
+    
     
 
     
