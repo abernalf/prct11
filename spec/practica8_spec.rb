@@ -31,7 +31,7 @@ describe Lista do
     end
     
     
-    it "El nodo ha sido insertado por el final" do
+    it "El nodo ha sido insertado por el principio" do
        lista.e_p
        expect(lista.cabeza).to eq(nodo1)
     end
@@ -59,17 +59,17 @@ end
 describe Clase_Madre do
 
     context "Libros" do
-                libro1 = Clase_Madre::Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
-                libro2 = Clase_Madre::Libro.new(["Tupu", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+                libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+                libro2 = Libro.new(["Tupu", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
                 it "El libro pertenece a la Clase_Madre" do
-                   expect(libro1.instance_of?Clase_Madre::Libro).to eq(true)
+                   expect(libro1.instance_of?Libro).to eq(true)
                    
                 end
                 
                 
                 
                 it "El libro no  pertenece a la clase Revista" do
-                   expect(libro1.instance_of?Clase_Madre::Revista).to eq(false)
+                   expect(libro1.instance_of?Revista).to eq(false)
                    
                 end
                 
@@ -86,16 +86,16 @@ describe Clase_Madre do
             
             
     context "Revistas" do
-                revista1 = Clase_Madre::Revista.new("Richard E. Silverman","Redes neuronales",2015,25,"Agapea","2ª","ISSN-10: 122449325866", "Nature")
+                revista1 = Revista.new("Richard E. Silverman","Redes neuronales",2015,25,"Agapea","2ª","ISSN-10: 122449325866", "Nature")
                 
                 it "La revista pertenece a la clase Revista" do
-                   expect(revista1.instance_of?Clase_Madre::Revista).to eq(true)
+                   expect(revista1.instance_of?Revista).to eq(true)
                    
                 end
                 
                 
-                 it "# La revista no pertenece a la clase Libro " do
-                   expect(revista1.instance_of?Clase_Madre::Libro).to eq(false)
+                 it "La revista no pertenece a la clase Libro " do
+                   expect(revista1.instance_of?Libro).to eq(false)
                    
                    
                 end
@@ -103,8 +103,8 @@ describe Clase_Madre do
     end
     
     
-    libro1 = Clase_Madre::Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
-    revista1 = Clase_Madre::Revista.new("Richard E. Silverman","Redes neuronales",2015,25,"Agapea","2ª","ISSN-10: 122449325866", "Nature")
+    libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    revista1 = Revista.new("Richard E. Silverman","Redes neuronales",2015,25,"Agapea","2ª","ISSN-10: 122449325866", "Nature")
     
     
     nodoLC1=Node.new(libro1,nil,nil)
