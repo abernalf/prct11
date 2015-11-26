@@ -41,6 +41,15 @@ describe Lista do
             expect(@lista.find {|x| x == 4}).to eq(4)
 
         end
+        
+        it "Comprobando el método drop" do
+            @lista.insertar(5)
+            @lista.insertar(4)
+            @lista.insertar(3)
+            @lista.insertar(2)
+            @lista.insertar(1)
+            expect(@lista.drop(2)).to eq([3, 4 ,5])
+        end
 
     end
 end 
