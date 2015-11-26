@@ -59,6 +59,15 @@ describe Lista do
             @lista.insertar(1)
             expect(@lista.max).to eq(5)
         end
+        
+        it "Comprobando el método min" do
+            @lista.insertar(5)
+            @lista.insertar(4)
+            @lista.insertar(3)
+            @lista.insertar(2)
+            @lista.insertar(1)
+            expect(@lista.min).to eq(1)
+        end
 
     end
 end 
