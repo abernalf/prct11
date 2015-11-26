@@ -9,6 +9,7 @@ class Lista
     end
     
     def i_p(nodo)
+        
         aux = @cabeza
         @cabeza = nodo
         aux.prev =  @cabeza
