@@ -42,7 +42,15 @@ class Lista
 
         return aux 
       end
- 
+  
+      
+      def each 
+        aux = @cabeza 
+        while aux != nil
+          yield aux.value  
+          aux = aux.next 
+        end
+      end
       
     end
 class Clase_Madre

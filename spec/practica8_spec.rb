@@ -3,7 +3,7 @@ require 'spec_helper'
 
 
 describe Lista do
-before :each do 
+    before :each do 
         @lista = Lista.new(nil,nil)
     end
     
@@ -16,7 +16,9 @@ before :each do
             expect(@lista.all?).to eq(true)
             
         end
-
+        
+        
+    end
 end 
 
 describe Clase_Madre do
