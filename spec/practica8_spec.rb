@@ -73,6 +73,10 @@ describe Clase_Madre do
                    
                 end
                 
+                it "comprobando la pertenencia" do
+                 expect(libro1.is_a?Clase_Madre).to eq(true)
+                end
+                
                 nodoL = Node.new(libro1,nil,nil)
                 nodoL1= Node.new(libro2,nil,nil)
                 listaL = Lista.new(nodoL)
@@ -116,15 +120,9 @@ describe Clase_Madre do
         expect(listaLC.final).to eq(nodoLC2)
         
     end
-            
+    
+ 
             
     
     
 end
-
-    
-            
-            
-    
-    
-
