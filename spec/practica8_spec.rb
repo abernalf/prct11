@@ -24,6 +24,24 @@ describe Lista do
             expect(@lista.any?).to eq(true)
     
         end 
+        
+        it "Comprobando el método count" do
+            @lista.insertar(1)
+            @lista.insertar(2)
+            @lista.insertar(3)
+            @lista.insertar(4)
+            expect(@lista.count).to eq(4)
+        end
+        
+        it "Comprobando el método detect" do
+            @lista.insertar(4)
+            @lista.insertar(3)
+            @lista.insertar(2)
+            @lista.insertar(1)
+            expect(@lista.detect {|x| x == 2}).to eq(2)
+            expect(@lista.find {|x| x == 4}).to eq(4)
+
+        end
 
     end
 end 
