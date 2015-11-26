@@ -68,6 +68,23 @@ describe Lista do
             @lista.insertar(1)
             expect(@lista.min).to eq(1)
         end
+        
+        it "Comprobando el método sort" do
+            @lista.insertar(7)
+            @lista.insertar(2)
+            @lista.insertar(8)
+            @lista.insertar(1)
+            @lista.insertar(3)
+            expect(@lista.sort).to eq([1, 2, 3, 7, 8])
+        end
+        it "Comprobando el método first" do
+            @lista.insertar(5)
+            @lista.insertar(4)
+            @lista.insertar(3)
+            @lista.insertar(2)
+            @lista.insertar(1)
+            expect(@lista.first).to eq(1)
+        end
 
     end
 end 
