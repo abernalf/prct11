@@ -17,7 +17,14 @@ describe Lista do
             
         end
         
-        
+        it "Comprobando el método any?" do
+            @lista.insertar(1)
+            @lista.insertar(2)
+            @lista.insertar(nil)
+            expect(@lista.any?).to eq(true)
+    
+        end 
+
     end
 end 
 
