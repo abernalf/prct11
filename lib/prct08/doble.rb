@@ -41,6 +41,8 @@ end
 
 
 class Clase_Madre
+
+    
     
     def initialize(autor,titulo,fecha)
        @autor = autor
@@ -59,6 +61,7 @@ class Clase_Madre
     def fecha
         return @fecha
     end
+    
     
     
     
@@ -141,9 +144,13 @@ class Revista < Clase_Madre
     def getissn
         return @issn
     end
+    
+    
 
     
 end
+
+
 
 
 
