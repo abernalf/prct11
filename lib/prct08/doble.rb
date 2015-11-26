@@ -41,6 +41,14 @@ end
 
 
 class Clase_Madre
+    
+    include Comparable
+    
+        
+    
+  def <=>(anOther)
+    @autor <=> anOther.autor
+  end
 
     
     
