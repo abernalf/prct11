@@ -32,7 +32,6 @@ describe Lista do
             @lista.insertar(4)
             expect(@lista.count).to eq(4)
         end
-        
         it "Comprobando el método detect" do
             @lista.insertar(4)
             @lista.insertar(3)
