@@ -3,6 +3,19 @@ require 'spec_helper'
 
 
 describe Lista do
+before :each do 
+        @lista = Lista.new(nil,nil)
+    end
+    
+    describe "Haciendo enumerable la lista doblemente enlazada" do
+        
+        it "Comprobando el método all?" do
+            @lista.insertar(1)
+            @lista.insertar(2)
+            @lista.insertar(3)
+            expect(@lista.all?).to eq(true)
+            
+        end
 
 end 
 
