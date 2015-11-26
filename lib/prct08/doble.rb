@@ -12,7 +12,8 @@ class Lista
         aux = @cabeza
         @cabeza = nodo
         aux.prev = @cabeza
-        @cabeza.next = aux
+        
+        @cabeza.next = aux 
         
         
     end
