@@ -1,45 +1,50 @@
-Node = Struct.new(:value, :next,:prev)
+Node = Struct.new(:prev, :value,:next)
 
-class Lista
-    attr_reader :cabeza, :final
+class Lista 
     
-    def initialize(nodo)
-       @cabeza = nodo 
-        @final = nodo
-    end
+      attr_accessor :head, :tail
+      include Enumerable 
     
-    def i_p(nodo)
-        aux = @cabeza
-        @cabeza = nodo
-        aux.prev =  @cabeza
+     
+    
+      def initialize(head, tail) 
+    
         
-        @cabeza.next = aux 
-        
-        
-    end
-    
-    def e_p
-       aux = @cabeza
-       @cabeza = aux.next
-    end
-    
-    def i_f(nodo)
-        aux = @final
-        @final = nodo
-        aux.next = nodo
-        @final.prev = aux
-    end
-    
-    def e_f
-        
-       @final = @final.prev
-       
-    end
-    
+        @cabeza = head 
+        @final = tail
+      end
+      
+      def insertar(item)
+            @node = Node.new(nil,item,nil) 
+            @node.next = @cabeza 
+            @node.prev = nil 
 
-end
+                if @final == nil 
+                    @final = @node 
+                else 
+                    @cabeza.prev = @node 
+                end
+            @cabeza = @node 
+      end
+      
+      
+      
+      def extraer 
+        aux = @cabeza 
+        @cabeza = @cabeza.next 
 
+        aux.next = nil 
+        aux.prev = nil 
 
+        if @cabeza == nil 
+          @final = nil 
+        end
+
+        return aux 
+      end
+ 
+      
+    end
 class Clase_Madre
     
     include Comparable
