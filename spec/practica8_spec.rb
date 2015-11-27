@@ -85,6 +85,7 @@ describe Lista do
             @lista.insertar(1)
             expect(@lista.first).to eq(1)
         end
+        
         it "Comprobando el método member?" do
             @lista.insertar(5)
             @lista.insertar(4)
