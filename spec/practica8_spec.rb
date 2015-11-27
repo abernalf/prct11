@@ -9,7 +9,7 @@ describe Lista do
     
     describe "Haciendo enumerable la lista doblemente enlazada" do
         
-        it "Comprobando el método all?" do
+        it "Metodo all?" do
             @lista.insertar(1)
             @lista.insertar(2)
             @lista.insertar(3)
@@ -17,7 +17,7 @@ describe Lista do
             
         end
         
-        it "Comprobando el método any?" do
+        it "Metodo any?" do
             @lista.insertar(1)
             @lista.insertar(2)
             @lista.insertar(nil)
@@ -25,14 +25,14 @@ describe Lista do
     
         end 
         
-        it "Comprobando el método count" do
+        it "Metodo count" do
             @lista.insertar(1)
             @lista.insertar(2)
             @lista.insertar(3)
             @lista.insertar(4)
             expect(@lista.count).to eq(4)
         end
-        it "Comprobando el método detect" do
+        it "Metodo detect" do
             @lista.insertar(4)
             @lista.insertar(3)
             @lista.insertar(2)
@@ -42,7 +42,7 @@ describe Lista do
 
         end
         
-        it "Comprobando el método drop" do
+        it "Metodo drop" do
             @lista.insertar(5)
             @lista.insertar(4)
             @lista.insertar(3)
@@ -51,7 +51,7 @@ describe Lista do
             expect(@lista.drop(2)).to eq([3, 4 ,5])
         end
         
-        it "Comprobando el método max" do
+        it "Metodo max" do
             @lista.insertar(5)
             @lista.insertar(4)
             @lista.insertar(3)
@@ -60,7 +60,7 @@ describe Lista do
             expect(@lista.max).to eq(5)
         end
         
-        it "Comprobando el método min" do
+        it "MEtodo min" do
             @lista.insertar(5)
             @lista.insertar(4)
             @lista.insertar(3)
@@ -69,7 +69,7 @@ describe Lista do
             expect(@lista.min).to eq(1)
         end
         
-        it "Comprobando el método sort" do
+        it "Metodo sort" do
             @lista.insertar(7)
             @lista.insertar(2)
             @lista.insertar(8)
@@ -77,7 +77,7 @@ describe Lista do
             @lista.insertar(3)
             expect(@lista.sort).to eq([1, 2, 3, 7, 8])
         end
-        it "Comprobando el método first" do
+        it "Metodo first" do
             @lista.insertar(5)
             @lista.insertar(4)
             @lista.insertar(3)
@@ -86,7 +86,7 @@ describe Lista do
             expect(@lista.first).to eq(1)
         end
         
-        it "Comprobando el método member?" do
+        it "Metodo member?" do
             @lista.insertar(5)
             @lista.insertar(4)
             @lista.insertar(3)
@@ -130,7 +130,7 @@ describe Clase_Madre do
             
             
     context "Revistas" do
-                revista1 = Revista.new("Richard E. Silverman","Redes neuronales",2015,25,"Agapea","2ª","ISSN-10: 122449325866", "Nature")
+                revista1 = Revista.new("Richard E. Silverman","Redes neuronales",2015,25,"Agapea","2","ISSN-10: 122449325866", "Nature")
                 
                 it "La revista pertenece a la clase Revista" do
                    expect(revista1.instance_of?Revista).to eq(true)
@@ -147,8 +147,8 @@ describe Clase_Madre do
     end
     
     
-    libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
-    revista1 = Revista.new("Richard E. Silverman","Redes neuronales",2015,25,"Agapea","2ª","ISSN-10: 122449325866", "Nature")
+    libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    revista1 = Revista.new("Richard E. Silverman","Redes neuronales",2015,25,"Agapea","2","ISSN-10: 122449325866", "Nature")
     
     
     nodoLC1=Node.new(libro1,nil,nil)
@@ -156,9 +156,9 @@ describe Clase_Madre do
     
     
     
-    libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
-    libro3 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
-    libro2 = Libro.new(["Tupu", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    libro3 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    libro2 = Libro.new(["Tupu", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
     
     it "No son iguales" do
        expect(libro1 == libro3).to eq(true)
