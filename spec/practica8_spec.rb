@@ -3,8 +3,16 @@ require 'spec_helper'
 
 
 describe Lista do
+    
+    @libro_1 = Libro.new("Dave", "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    @libro_3 = Libro.new("Chad", "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    @libro_2 = Libro.new("Marco", "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    
+    
     before :each do 
         @lista = Lista.new(nil,nil)
+        @listaL = Lista.new(nil,nil)
+        
     end
     
     describe "Haciendo enumerable la lista doblemente enlazada" do
@@ -32,14 +40,14 @@ describe Lista do
             @lista.insertar(4)
             expect(@lista.count).to eq(4)
         end
-        it "Metodo detect" do
+        
+        it "Metodo member?" do
+            @lista.insertar(5)
             @lista.insertar(4)
             @lista.insertar(3)
             @lista.insertar(2)
             @lista.insertar(1)
-            expect(@lista.detect {|x| x == 2}).to eq(2)
-            expect(@lista.find {|x| x == 4}).to eq(4)
-
+            expect(@lista.member?(3)).to eq(true)
         end
         
         it "Metodo drop" do
@@ -60,6 +68,7 @@ describe Lista do
             expect(@lista.max).to eq(5)
         end
         
+        
         it "MEtodo min" do
             @lista.insertar(5)
             @lista.insertar(4)
@@ -67,6 +76,16 @@ describe Lista do
             @lista.insertar(2)
             @lista.insertar(1)
             expect(@lista.min).to eq(1)
+        end
+        
+        it "Metodo detect" do
+            @lista.insertar(4)
+            @lista.insertar(3)
+            @lista.insertar(2)
+            @lista.insertar(1)
+            expect(@lista.detect {|x| x == 2}).to eq(2)
+            expect(@lista.find {|x| x == 4}).to eq(4)
+
         end
         
         it "Metodo sort" do
@@ -86,17 +105,18 @@ describe Lista do
             expect(@lista.first).to eq(1)
         end
         
-        it "Metodo member?" do
-            @lista.insertar(5)
-            @lista.insertar(4)
-            @lista.insertar(3)
-            @lista.insertar(2)
-            @lista.insertar(1)
-            expect(@lista.member?(3)).to eq(true)
+        it "se cumple con libros" do
+            @listaL.insertar(@libro_1)
+            expect(@listaL.member?(@libro_1)).to eq(true)
         end
+        
+
+        
+
     
 
     end
+    
 end 
 
 describe Clase_Madre do
@@ -156,16 +176,16 @@ describe Clase_Madre do
     
     
     
-    libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
-    libro3 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
-    libro2 = Libro.new(["Tupu", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    libro1 = Libro.new("Dave", "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    libro3 = Libro.new("Chad", "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+    libro2 = Libro.new("Marco", "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
     
-    it "No son iguales" do
-       expect(libro1 == libro3).to eq(true)
+    it "No son iguales1" do
+       expect(libro1 == libro3).to eq(false)
     end
     
-    it "No son iguales" do
-       expect(libro1 == libro2).to eq(false)
+    it "No son iguales2" do
+       expect(libro1 < libro2).to eq(true)
     end
 
  

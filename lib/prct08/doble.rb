@@ -45,7 +45,6 @@ class Lista
   
       
       def each 
-          
         aux = @cabeza 
         while aux != nil
           yield aux.value  
