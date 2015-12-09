@@ -95,6 +95,18 @@ end
 
 class Cambio < Clase_Madre
     
+    def ape
+        @n = (@autor.size)-1
+        for i in 0..@n
+  
+            value = @autor[i].split(" ")
+            @autor[i] = "#{value[1]}, #{value[0][0]}"
+  
+        end
+
+         
+    end
+    
 end
     
     
