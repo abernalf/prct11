@@ -57,6 +57,9 @@ class Clase_Madre
     
     include Comparable
     
+    
+    
+    
         
     
   def <=>(anOther)
@@ -84,12 +87,31 @@ class Clase_Madre
     end
     
     
+    def ape(other)
+        
+        
+          for i in 0..other.autor.size-1
+  
+            value=other.autor[i].split(" ")
+            other.autor[i] = "#{value[1]}, #{value[0][0]}"
+  
+          end
+         
+    end
+    
     
     
 end
 
 
-class Libro < Clase_Madre
+    
+    
+
+    
+
+
+
+class Libro < Cambio
 
     
     
@@ -133,7 +155,7 @@ class Libro < Clase_Madre
 end
 
 
-class Revista < Clase_Madre
+class Revista < Cambio
 
    def initialize(autor,titulo,fecha,serie,editorial,edicion,issn,numed)
        @autor=autor
@@ -170,6 +192,8 @@ class Revista < Clase_Madre
 
     
 end
+
+
 
 
 

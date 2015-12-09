@@ -123,7 +123,7 @@ describe Clase_Madre do
 
 
     context "Libros" do
-                libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+                libro1 = Libro.new("Milhouse VanHouten", "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
                 libro2 = Libro.new(["Tupu", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
                 it "El libro pertenece a la Clase_Madre" do
                    expect(libro1.instance_of?Libro).to eq(true)
@@ -166,6 +166,16 @@ describe Clase_Madre do
                 
     end
     
+    context "Cambio" do
+        
+        
+
+           
+
+                
+        
+    end
+    
     
     libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide", "(The Facets of Ruby)", "Pragmatic Bookshelf", "4 edition", "July 7, 2013", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
     revista1 = Revista.new("Richard E. Silverman","Redes neuronales",2015,25,"Agapea","2","ISSN-10: 122449325866", "Nature")
@@ -187,9 +197,8 @@ describe Clase_Madre do
     it "No son iguales2" do
        expect(libro1 < libro2).to eq(true)
     end
+    
 
- 
-            
     
     
 end
