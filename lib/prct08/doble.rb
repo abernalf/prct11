@@ -95,7 +95,8 @@ end
 
 class Cambio < Clase_Madre
     
-    def ape
+    def apellidos_nombre
+        
         @n = (@autor.size)-1
         for i in 0..@n
   
@@ -118,7 +119,7 @@ end
 class Libro < Cambio
 
     
-    
+   
     def initialize(autor,titulo,fecha,serie,editorial,edicion,isbn)
        @autor=autor
        @titulo=titulo
@@ -155,6 +156,10 @@ class Libro < Cambio
     def getisbn
         return @isbn
     end
+    
+    def apellidos_nombre
+    super
+end
 
 end
 
