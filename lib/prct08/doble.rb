@@ -87,23 +87,15 @@ class Clase_Madre
     end
     
     
-    def ape(other)
-        
-        
-          for i in 0..other.autor.size-1
-  
-            value=other.autor[i].split(" ")
-            other.autor[i] = "#{value[1]}, #{value[0][0]}"
-  
-          end
-         
-    end
+
     
     
     
 end
 
-
+class Cambio < Clase_Madre
+    
+end
     
     
 
