@@ -63,8 +63,13 @@ class Clase_Madre
         
     
   def <=>(anOther)
-    @autor <=> anOther.autor
-    
+       if (@autor != anOther.autor)
+       @autor <=> anOther.autor
+       elsif(@fecha != anOther.fecha)
+       @fecha <=> anOther.fecha
+       else
+       @titulo <=> anOther.titulo
+       end
   end
 
     
