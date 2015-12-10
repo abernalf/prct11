@@ -1,3 +1,4 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'prct08'
-require ’coveralls’
+require 'coveralls'
+Coveralls.wear!
