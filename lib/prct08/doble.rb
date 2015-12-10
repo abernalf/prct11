@@ -64,6 +64,7 @@ class Clase_Madre
     
   def <=>(anOther)
     @autor <=> anOther.autor
+    
   end
 
     
@@ -157,9 +158,7 @@ class Libro < Cambio
         return @isbn
     end
     
-    def apellidos_nombre
-    super
-end
+
 
 end
 
