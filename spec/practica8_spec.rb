@@ -61,6 +61,10 @@ describe Clase_Madre do
         
         end
         
+        it "Imprime" do
+            @libro1.to_s
+        end
+        
 
         
 end
