@@ -53,6 +53,14 @@ describe Clase_Madre do
            expect(@lista_2.sort).to eq([@libro4,@libro1]) 
         end
         
+        it "Subtitulo en mayuscula" do
+            
+            @libro1.m_capitalize
+            expect(@libro1.titulo).to eq("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide")
+        
+        
+        end
+        
 
         
 end
