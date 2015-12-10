@@ -59,18 +59,26 @@ class Clase_Madre
     
     
     
-    
+
         
     
-  def <=>(anOther)
-       if (@autor != anOther.autor)
-       @autor <=> anOther.autor
-       elsif(@fecha != anOther.fecha)
-       @fecha <=> anOther.fecha
-       else
-       @titulo <=> anOther.titulo
-       end
-  end
+       
+def <=>(other)
+        if (@autor[0] != other.autor[0])
+                @autor<=> other.autor
+        else
+        if(@autor.size==1) || (other.autor.size ==1)
+                @autor.size <=> other.autor.size
+        else
+        if(@fecha != other.fecha)
+                @fecha <=> other.fecha
+        else
+                @titulo <=> other.titulo
+            end
+        end
+    end
+end
+  
 
     
     
@@ -114,7 +122,10 @@ class Cambio < Clase_Madre
          
     end
     
+    
 end
+    
+
     
     
 
@@ -162,10 +173,8 @@ class Libro < Cambio
     def getisbn
         return @isbn
     end
-    
+end 
 
-
-end
 
 
 class Revista < Cambio
@@ -205,12 +214,4 @@ class Revista < Cambio
 
     
 end
-
-
-
-
-
-
-
-
 
