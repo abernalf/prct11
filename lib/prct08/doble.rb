@@ -1,58 +1,95 @@
-Node = Struct.new(:prev, :value,:next)
+   
+    Node= Struct.new(:value, :next, :prev)
 
-class Lista 
-    
-      attr_accessor :head, :tail
-      include Enumerable 
-    
-     
-    
-      def initialize(head, tail) 
+    class Lista
+
+        include Enumerable
+        attr_accessor :inicio, :final 
+        
+        def initialize()
+            
+            @inicio = nil
+            @final = nil
+            
+        end
+        
+        def extraer()
+            
+            if (@cabeza == nil)
+                
+                return nil
+            else
+                aux = @cabeza
+                @cabeza = @cabeza.next
+                return aux
+            end
+        end
+        
+        def insertar(item)
+            
+            nodo = Node.new(item,nil,nil)
+            if(@cabeza == nil)
+                @cabeza = nodo
+                @final = nodo
+            else
+                aux = @cabeza
+                @cabeza = nodo
+                @cabeza.next = aux
+                aux.prev = @cabeza
+            end
+        end
+        
+        
+        def empty()
+           
+           if(@cabeza == nil)
+               
+               return true
+               
+           else
+               
+               return false
+               
+           end
+            
+        end
+        
+        def each
+            
+            if (@cabeza == nil and @final == nil)
+                
+                yield nil
+                
+            elsif (@cabeza == @final)
+                
+                yield @cabeza.value
+                
+            else
+                
+                while(@cabeza != nil)
+                
+                    yield @cabeza.value
+                    @cabeza = @cabeza.next
+                    
+                end                
+            end
+        end
+        def to_s
+           
+           output = []
+           i=0;
+            while(@cabeza != nil)
+                output1 = @cabeza.value.to_s
+                output[i] = output1
+                @cabeza = @cabeza.next
+                i = i+1 
+            end
+            output
+        end
     
         
-        @cabeza = head 
-        @final = tail
-      end
-      
-      def insertar(item)
-            @node = Node.new(nil,item,nil) 
-            @node.next = @cabeza 
-            @node.prev = nil 
-
-                if @final == nil 
-                    @final = @node 
-                else 
-                    @cabeza.prev = @node 
-                end
-            @cabeza = @node 
-      end
-      
-      
-      
-      def extraer 
-        aux = @cabeza 
-        @cabeza = @cabeza.next 
-
-        aux.next = nil 
-        aux.prev = nil 
-
-        if @cabeza == nil 
-          @final = nil 
-        end
-
-        return aux 
-      end
-  
-      
-      def each 
-        aux = @cabeza 
-        while aux != nil
-          yield aux.value  
-          aux = aux.next 
-        end
-      end
-      
-    end
+end
+    
 class Clase_Madre
     
     include Comparable
