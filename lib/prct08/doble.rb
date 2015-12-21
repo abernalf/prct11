@@ -91,57 +91,54 @@
 end
     
 class Clase_Madre
-    
-    include Comparable
-    
-    
-    
 
-        
-    
-       
-def <=>(other)
-        if (@autor[0] != other.autor[0])
-                @autor<=> other.autor
-        else
-        if(@autor.size==1) || (other.autor.size ==1)
-                @autor.size <=> other.autor.size
-        else
-        if(@fecha != other.fecha)
-                @fecha <=> other.fecha
-        else
-                @titulo <=> other.titulo
-            end
-        end
-    end
-end
-  
-
-    
-    
-    def initialize(autor,titulo,fecha)
-       @autor = autor
-       @titulo = titulo
-       @fecha= fecha
-    end
-    
-    def autor
-        return @autor
-    end
-    
-    def titulo
-        return @titulo
-    end
-    
-    def fecha
-        return @fecha
-    end
-    
-    
-
-    
-    
-    
+     include Comparable
+     attr_accessor :titulo, :autor, :fecha 
+     
+     def initialize(titulo, &block)
+     
+          self.titulo = titulo
+          self.autor = []
+          self.fecha = []
+     
+          if block_given?  
+               if block.arity == 1
+                    yield self
+               else
+                    instance_eval &block 
+               end
+          end
+     end
+     
+     def date(name, options = {})
+          date = name
+          
+          fecha << date
+     end
+     
+     def author(name, options = {})
+          author = name
+          author << " (#{options[:amount]})" if options[:amount]
+          autor << author
+     end
+     
+     def <=>(other)
+          
+          if(@autor != other.autor)
+               @autor <=> other.autor
+          elsif(@autor == other.autor)
+               @fecha <=> other.fecha
+          elsif(@fecha == other.fecha && @autor == other.autor)
+               @titulo <=> other.titulo
+          end
+     end
+     
+     
+     def to_s()
+        @salida = " AUTOR/ES: " + "#{@autor}" + " TITULO: " + "#{@titulo}" + " FECHA: " + "#{@fecha}" 
+     end
+     
+     
 end
 
 class Cambio < Clase_Madre
@@ -200,87 +197,64 @@ end
 
 
 class Libro < Cambio
+     
+     attr_accessor :edicion, :volumen, :lugar
+     
+     def initialize(titulo,&block)
+         
+          self.titulo = titulo
+          self.autor = []
+          self.fecha = []
+          self.edicion = []
+          self.volumen = []
+          self.lugar = []
+          
+          if block_given?  
+               if block.arity == 1
+                    yield self
+               else
+                    instance_eval &block 
+               end
+          end
+     end
+     
+     def date(name, options = {})
+          date = name
+          fecha << date
+     end
+     
+     def author(name, options = {})
+          author = name
+          author << " (#{options[:amount]})" if options[:amount]
+          autor << author
+     end
+     
+     def edition(name, options = {})
+          edition = name
+          edicion << edition
+     end
+     def volume(name, options = {})
+          volume = name
+          volumen << volume
+     end
+     def site(name, options = {})
+          site = name
+          lugar << site
+     end
+     
+     def to_s()
+          
+          output = titulo
+          output << " #{autor.join(', ')} "
+          output << "(#{fecha.join(', ')}) "
+          output << "(#{edicion.join(', ')}) "
+          output << "(#{volumen.join(', ')}) "
+          output << "#{lugar.join(', ')} "
 
-    
-   
-    def initialize(autor,titulo,fecha,serie,editorial,edicion,isbn)
-       @autor=autor
-       @titulo=titulo
-       @fecha=fecha
-       @serie = serie
-       @editorial = editorial
-       @edicion = edicion
-       @isbn = isbn
-    end
-    
-    def getautor()
-        return @autor
-    end
-    
-    def gettitulo()
-        return @titulo
-    end
-    
-    def getserie()
-        return @serie
-    end
-    
-    def geteditorial()
-        return @editorial
-    end
-    
-    def getnumedicion()
-        return @edicion
-    end
-    
-    def getfecha()
-        return @fecha
-    end
-    def getisbn
-        return @isbn
-    end
-    
-def to_s
-            
-    
-        puts ""
-        for i in 0..@autor.size-1
-            
-            if i == @autor.size-2
-                print ("#{@autor[i]}  &  ")
-            else
-                print ("#{@autor[i]}, ")
-                
-            end
-        end
-        
-            puts""
-            print "\t"
-            puts ("#{@titulo}")
-            
-            print "\t"
-            puts ("#{@serie}")
-        
-            print "\t"
-            puts ("#{@editorial}")
-        
-            print "\t"
-            puts ("#{@edicion}")
-        
-            print "\t"
-            puts ("#{@fecha}")
-            
-            
-            
-            @isbn.each { |i, valor|
-            print "\t"
-            puts ("#{i}  #{valor}") } 
-            
- 
-        end 
-    
+          output
+     end
 
-
+         
 end
 
 

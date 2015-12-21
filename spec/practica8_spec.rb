@@ -36,7 +36,7 @@ require 'spec_helper'
       lista.insertar(libro1)
       lista.insertar(libro2)
 
-      apa = ["Libro 1, autor 1 (fecha 1) (edicion 1) (1) sitio 1 ", "Libro 2, autor 2 (fecha 2) (edicion 2) (2) sitio 2 "] 
+      apa = ["Libro 2 autor 2 (fecha 2) (edicion 2) (2) sitio 2 ","Libro 1 autor 1 (fecha 1) (edicion 1) (1) sitio 1 "] 
       
 
       it "La lista se imprime correctamente" do
